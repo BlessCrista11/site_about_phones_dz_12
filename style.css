@@ -1,4 +1,44 @@
-/*бряка*/
+@keyframes paddle {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(35deg);
+      }}
+       @keyframes flag {
+      0% {
+    transform: rotateY(0deg);
+        
+      }
+      50% {
+        transform: rotateY(-45deg);
+        perspective: 500px;
+      }
+      75% {
+		transform: rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateY(45deg);
+        perspective: 500px;
+      }
+    }
+    @keyframes screw {
+      0% {
+       left: 0;
+      }
+      100% {
+         left: 100%;
+      }}
+       @keyframes screw_crutch {
+      0% {
+       left: 0;
+      }
+      100% {
+        width: 148px;
+         left: -48px;
+      }}
+/*бряка
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
@@ -45,8 +85,7 @@
 
 /*основной*/
 	.wrapper {width: 1200px;
-		 margin: 0 auto;
-		
+		 margin: 0 auto;		
 		  background: silver;
 		position: relative;
 		text-align:center;
@@ -55,14 +94,18 @@
 	.screw{
 		width: 200px;
 		height: 50px;	
-		 background: repeating-linear-gradient(-60deg, black, black 5px, red 5px, red 10px);	
-		position: relative;		
+		background: repeating-linear-gradient(-60deg, black, black 5px, red 5px, red 10px);	
+		position: relative;	
+		animation: screw 4s linear infinite alternate;	
 	}
 	.screw_crutch{
 		width: 100px;
 		height: 50px;	
 		 background: red;	
-		position: absolute;		
+		position: absolute;
+		top: 0;
+		left: 0px;
+		animation: screw_crutch 4s linear infinite alternate;		
 	}
 
 	.screw:before{
@@ -293,6 +336,9 @@
 			position: absolute;
 			right: 37%;
 			top: 130px;
+			transform-origin: 0 0 0;
+			transform: rotateY(-45deg);
+			animation: flag 5s linear infinite alternate;
 		}
 .flag:after{
 			content: "";
@@ -305,6 +351,10 @@
 			position: absolute;
 			right: 37%;
 			top: 120px;
+			transform-origin: 0 0 0;
+			transform: rotateY(-45deg);
+
+			animation: flag 5s linear infinite alternate;
 		}
 
 .sail{
@@ -354,6 +404,7 @@
 	position: absolute;
 	top: 53%;
 	left: 30%;
+	animation: paddle 5s linear infinite alternate;
     }
 .paddle_1:before{
 	content: "";
@@ -386,6 +437,7 @@
 	position: absolute;
 	top: 53%;
 	left: 40%;
+	animation: paddle 5s linear infinite alternate;
     }
 .paddle_2:before{
 	content: "";
@@ -418,6 +470,7 @@
 	position: absolute;
 	top: 53%;
 	left: 50%;
+	animation: paddle 5s linear infinite alternate;
     }
 .paddle_3:before{
 	content: "";
@@ -449,6 +502,7 @@
 	position: absolute;
 	top: 53%;
 	left: 60%;
+	animation: paddle 5s linear infinite alternate;
     }
 .paddle_4:before{
 	content: "";
